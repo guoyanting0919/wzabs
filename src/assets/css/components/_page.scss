@@ -1,0 +1,25 @@
+.page {
+ display: flex;
+ padding: 20px;
+ justify-content: flex-end;
+ .pageD {
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   border-radius: 100%;
+   text-align: center;
+   border-color: #000;
+   border-style: solid;
+   border-width: 1px;
+   margin: 0 10px 0 0;
+   cursor: pointer;
+ }
+ .pageDonc {
+   border-color: #000;
+   color:#fff;
+   @include bg_color($background-color-theme1);
+   font-weight: bold;
+   font-size: 18px;
+   transform: scale(1.2,1.2);
+ }
+}

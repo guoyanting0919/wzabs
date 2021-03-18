@@ -1,0 +1,32 @@
+.el-submenu__icon-arrow {
+  top: 56% !important;
+  right: 10px !important;
+}
+
+.el-menu {
+  transition: 0.5s;
+  @include bg_color($background-color-theme1);
+}
+
+.el-submenu__title:hover {
+  transition: 0.5s;
+  @include bg_color($background-color-theme1);
+}
+
+.el-menu-item:hover,
+.el-menu-item:focus {
+  transition: 0.5s;
+  @include hover_darken($background-color-theme1);
+}
+
+.SidebarBadge {
+  width: 20px;
+  height:20px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #f00;
+  color:#fff;
+}

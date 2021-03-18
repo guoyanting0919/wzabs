@@ -1,0 +1,102 @@
+#ActivityParticipate {
+  padding: 0 1.25rem;
+  height: 100%;
+  .ParticipateMember {
+    background-color: $color6;
+    width: calc(100% + 64px);
+    margin: 0 0 0 -32px;
+    padding: 28px 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ParticipateMemberCard {
+    width: 48%;
+    margin: 0 2% 2% 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 30px 50px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      width: 44px;
+      height: 44px;
+      border-radius: 100%;
+      background-color: #409eff;
+      position: absolute;
+      top: -22px;
+      left: -22px;
+    }
+    &::before {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      background-color: #009b72;
+      position: absolute;
+      top: -30px;
+      right: -30px;
+    }
+  }
+  .ParticipateMemberCardLeft {
+    width: 50%;
+    border-width: 0 2px 0 0;
+    border-style: solid;
+    border-color: $color5;
+  }
+  .ParticipateMemberCardItem {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 0;
+  }
+  .ParticipateMemberCardItemLabel {
+    font-size: $fontSize4;
+    font-weight: bold;
+    color: #6d6e70;
+    margin: 0 20px 0 0;
+  }
+  .ParticipateMemberCardItemText {
+    font-size: $fontSize4;
+  }
+  .ParticipateMemberCardRight {
+    width: 50%;
+    padding: 0 0 0 50px;
+  }
+  .buttonBox {
+    padding: 0px 32px 10px 32px;
+  }
+  .btnCol {
+    margin-bottom: 1rem;
+  }
+  .buttonBoxItem {
+    display: flex;
+    align-items: center;
+    margin: 0 0 14px 0;
+    .buttonBoxItemText {
+      color: #f00;
+    }
+    .el-select {
+      margin: 0 12px 0 0;
+    }
+    .el-button {
+      margin: 0 12px 0 0;
+    }
+  }
+
+  .textOverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .statusBox{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .statusItem{
+    margin-left: 1rem;
+  }
+}

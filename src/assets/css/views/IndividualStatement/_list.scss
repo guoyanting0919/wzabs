@@ -1,0 +1,82 @@
+#individualList {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .headerBox {
+    display: flex;
+    align-items: flex-start;
+
+    &__view {
+      margin-left: 10px;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputTitle {
+    min-width: 110px;
+    text-align: right;
+    margin-right: 1rem;
+  }
+
+  .addOrEditDialog {
+    width: 1000px;
+    border-radius: 10px;
+    margin-top: 8vh !important;
+    height: 84vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 5px 5px 10px black;
+
+    .el-dialog__header {
+      position: fixed;
+      width: 950px;
+      background-color: #fff;
+      z-index: 3;
+      border-radius: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 98%;
+        left: 1%;
+        height: 2px;
+        background: #e6e3e3;
+        bottom: 0;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      //整停sb寬度
+      width: 14px;
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      //軌道樣式
+      background-color: #fff;
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(to right,
+          #898b8d 0%,
+          #898b8d 50%,
+          #fff 51%,
+          #fff 100%);
+    }
+  }
+
+  .ck-content {
+    min-height: 500px !important;
+  }
+}

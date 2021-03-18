@@ -1,0 +1,175 @@
+#calendarEvent {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .mainTable {
+    margin-top: 2rem;
+  }
+
+  .textOverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .addOrEditDialog {
+    width: 1000px;
+    border-radius: 10px;
+    margin-top: 8vh !important;
+    height: 84vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 5px 5px 10px black;
+
+    .el-dialog__header {
+      position: fixed;
+      width: 950px;
+      background-color: #fff;
+      z-index: 1;
+      border-radius: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 98%;
+        left: 1%;
+        height: 2px;
+        background: #e6e3e3;
+        bottom: 0;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      //整停sb寬度
+      width: 14px;
+      height: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      //軌道樣式
+      background-color: #fff;
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(
+        to right,
+        #898b8d 0%,
+        #898b8d 50%,
+        #fff 51%,
+        #fff 100%
+      );
+    }
+  }
+
+  .eventDateBox,
+  .showDateBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+  }
+
+  .dateFz {
+    font-size: 14px;
+    @include rwd($lg) {
+      font-size: 12px;
+    }
+  }
+
+  .dateLine {
+    width: 1px;
+    height: 10px;
+    border-radius: 4px;
+    background: #898b8d;
+  }
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .inputTitle {
+      width: 120px;
+      text-align: right;
+      margin-right: 1rem;
+    }
+  }
+
+  .relatedCheck {
+    margin-bottom: 1rem;
+  }
+
+  .relateInput {
+    margin-right: 1rem;
+    width: 217px;
+  }
+
+  .changeDialog {
+    border-radius: 10px;
+    width: 500px;
+  }
+
+  .changeInputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .changeInputTitle {
+    width: 100px;
+  }
+
+  .fileName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .downloadBtn {
+    width: 100px;
+    padding: 0;
+
+    p {
+      padding: 8px 8px;
+    }
+
+    .fas {
+      margin-right: 0.5rem;
+      // transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .noFiles {
+    color: red;
+    font-size: 13px;
+  }
+
+  // element UI
+  .el-scrollbar__bar.is-vertical > div {
+    background-color: #c4c4c4;
+  }
+
+  .el-scrollbar__wrap {
+    height: 500px;
+  }
+
+  .selectBox {
+    .el-select {
+      margin-right: 1rem;
+    }
+  }
+}
+
+// ck
+.ck.ck-editor {
+  width: 750px;
+}

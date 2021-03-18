@@ -1,0 +1,35 @@
+#ActivityEdit {
+  padding: 0 1.25rem;
+  height: 100%;
+  .MenuSortList {
+    display: flex;
+  }
+  .MenuSortListTitle {
+    width: 100px;
+    padding: 0 0 0 8px;
+  }
+  .MenuSortListIcon {
+    margin: 0 8px 0 0;
+    color:#409EFF;
+    cursor: pointer;
+  }
+  .el-checkbox__label {
+    width: 100px;
+    color:#000;
+  }
+  .Step {
+   display: flex;
+   justify-content: center;
+ }
+ .el-select {
+   margin: 0 10px 0 0;
+ }
+ .removeFile {
+   margin: 0 0 0 10px;
+ }
+ .red {
+   padding: 5px 0;
+   line-height: normal;
+   color:#f00;
+ }
+}

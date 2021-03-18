@@ -1,0 +1,118 @@
+#userUsers {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .textOverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .roleBadge {
+    padding: 4px 8px;
+    background: #ecf5ff;
+    color: #409eff;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #d9ecff;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .unitBadge {
+    margin-right: 0.5rem;
+  }
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputTitle {
+    width: 90px;
+    text-align: left;
+    margin-right: 1rem;
+  }
+
+  .unitSelect {
+    margin-right: 1rem;
+  }
+
+  .addOrEditDialog {
+    width: 1000px;
+    border-radius: 10px;
+    margin-top: 8vh !important;
+    height: 84vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 5px 5px 10px black;
+
+    .el-dialog__header {
+      position: fixed;
+      width: 950px;
+      background-color: #fff;
+      z-index: 3;
+      border-radius: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 98%;
+        left: 1%;
+        height: 2px;
+        background: #e6e3e3;
+        bottom: 0;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      //整停sb寬度
+      width: 14px;
+      height: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      //軌道樣式
+      background-color: #fff;
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(
+        to right,
+        #898b8d 0%,
+        #898b8d 50%,
+        #fff 51%,
+        #fff 100%
+      );
+    }
+  }
+
+  // element UI
+  // .el-scrollbar__bar.is-vertical > div {
+  //   background-color: #c4c4c4;
+  // }
+
+  // .el-scrollbar__wrap {
+  //   height: 500px;
+  // }
+
+  // .el-dialog {
+  //   width: 850px;
+  //   border-radius: 10px;
+  //   padding: 0.75rem;
+  // }
+
+  .el-tree__empty-block {
+    width: 200px;
+
+    span {
+      color: rgb(219, 28, 28);
+    }
+  }
+}

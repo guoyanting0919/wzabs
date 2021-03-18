@@ -1,0 +1,20 @@
+#calendarCategory {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .inputTitle {
+    margin-right: 1rem;
+    width: 60px;
+  }
+
+  .addOrEditDialog {
+    border-radius: 10px;
+    width: 650px;
+  }
+}

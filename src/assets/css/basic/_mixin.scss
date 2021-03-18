@@ -1,0 +1,182 @@
+@mixin rwd($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// @include rwd($sm) {
+//     height: 60px;
+//     line-height: 60px;
+//   }
+
+@mixin bg_color($color) {
+  background-color: $color;
+  [data-theme="theme1"] & {
+    background-color: $background-color-theme1;
+  }
+  [data-theme="theme2"] & {
+    background-color: $background-color-theme2;
+  }
+}
+
+@mixin bg_color_light($color) {
+  background-color: lighten($color: $color, $amount: 65) !important;
+  [data-theme="theme1"] & {
+    background-color: lighten(
+      $color: $background-color-theme1,
+      $amount: 65
+    ) !important;
+  }
+  [data-theme="theme2"] & {
+    background-color: lighten(
+      $color: $background-color-theme2,
+      $amount: 65
+    ) !important;
+  }
+}
+
+@mixin btn_outline($color) {
+  background-color: #fff;
+  color: $color;
+  border-color: $color;
+  transition: 0.5s;
+  font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+    "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica, Arial,
+    sans-serif;
+
+  &:hover,
+  &:focus {
+    background-color: $color;
+    color: #fff;
+    border-color: $color;
+  }
+  [data-theme="theme1"] & {
+    background-color: #fff;
+    color: $background-color-theme1;
+    border-color: $background-color-theme1;
+    transition: 0.5s;
+    font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+      "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica,
+      Arial, sans-serif;
+
+    &:hover,
+    &:focus {
+      background-color: $background-color-theme1;
+      color: #fff;
+      border-color: $background-color-theme1;
+    }
+  }
+  [data-theme="theme2"] & {
+    background-color: #fff;
+    color: $background-color-theme2;
+    border-color: $background-color-theme2;
+    transition: 0.5s;
+    font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+      "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica,
+      Arial, sans-serif;
+
+    &:hover,
+    &:focus {
+      background-color: $background-color-theme2;
+      color: #fff;
+      border-color: $background-color-theme2;
+    }
+  }
+}
+
+@mixin btn_contain($color) {
+  background-color: $color;
+  color: #fff;
+  border-color: $color;
+  transition: 0.5s;
+  font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+    "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica, Arial,
+    sans-serif;
+
+  &:focus {
+    background-color: $color;
+    color: #fff;
+    border-color: $color;
+  }
+
+  &:hover {
+    background-color: lighten($color, 10%);
+    color: #fff;
+    border-color: $color;
+  }
+  [data-theme="theme1"] & {
+    background-color: $background-color-theme1;
+    color: #fff;
+    border-color: $background-color-theme1;
+    transition: 0.5s;
+    font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+      "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica,
+      Arial, sans-serif;
+
+    &:focus {
+      background-color: $background-color-theme1;
+      color: #fff;
+      border-color: $background-color-theme1;
+    }
+
+    &:hover {
+      background-color: lighten($background-color-theme1, 10%);
+      color: #fff;
+      border-color: $background-color-theme1;
+    }
+  }
+  [data-theme="theme2"] & {
+    background-color: $background-color-theme2;
+    color: #fff;
+    border-color: $background-color-theme2;
+    transition: 0.5s;
+    font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+      "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica,
+      Arial, sans-serif;
+
+    &:focus {
+      background-color: $background-color-theme2;
+      color: #fff;
+      border-color: $background-color-theme2;
+    }
+    &:hover {
+      background-color: lighten($background-color-theme2, 10%);
+      color: #fff;
+      border-color: $background-color-theme2;
+    }
+  }
+}
+
+@mixin border_color(
+  $size: 1px,
+  $type: solid,
+  $color: $background-color-theme1
+) {
+  border: $size $type $color;
+  [data-theme="theme1"] & {
+    border: $size $type $background-color-theme1;
+  }
+  [data-theme="theme2"] & {
+    border: $size $type $background-color-theme2;
+  }
+}
+
+@mixin hover_darken($color) {
+  background-color: darken($color, 5%);
+  [data-theme="theme1"] & {
+    background-color: darken($background-color-theme1, 5%);
+  }
+  [data-theme="theme2"] & {
+    background-color: darken($background-color-theme2, 5%);
+  }
+}
+
+@mixin hover_lighten($color) {
+  background-color: lighten($color, 5%);
+  [data-theme="theme1"] & {
+    background-color: lighten($background-color-theme1, 5%);
+  }
+  [data-theme="theme2"] & {
+    background-color: lighten($background-color-theme2, 5%);
+  }
+}

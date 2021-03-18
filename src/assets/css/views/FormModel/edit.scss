@@ -1,0 +1,20 @@
+#FormModelEdit {
+  padding: 0 1.25rem;
+  height: 100%;
+  .el-tree-node__content {
+    height: 50px;
+  }
+  .customTreeNode {
+    display: flex;
+    height: 50px;
+    overflow: hidden;
+    align-items: center;
+  }
+  .customTreeNodeTitle {
+    padding: 0 10px;
+  }
+  .tableD {
+    box-sizing: border-box;
+    padding: 0 50px;
+  }
+}

@@ -1,0 +1,77 @@
+#ActivityList {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .reportModal {
+    .reportColumn {
+      &__title {
+        min-width: 150px;
+        max-width: 150px;
+
+        a {
+          text-decoration: underline;
+          color: #409EFF;
+          cursor: pointer;
+        }
+      }
+
+      &__select {
+        margin-top: 8px;
+
+        .el-checkbox-group {
+          display: inline;
+        }
+      }
+    }
+
+    .wrapColumn {
+      flex-wrap: wrap;
+    }
+  }
+
+  .manuscript {
+    &__summary {
+      margin: 0 0 20px 16px;
+    }
+
+    .el-dialog__body {
+      padding-top: 0 !important;
+    }
+  }
+
+  .checkInButton {
+    display: flex;
+    justify-content: center;
+  }
+
+  .checkInSuccess {
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      color: #0a0;
+    }
+  }
+
+  .actName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+
+    p {
+      margin: 0px;
+    }
+  }
+
+  .el-icon-success {
+    font-size: 30px;
+  }
+
+  .chart-el-checkbox {
+    .el-form-item__content {
+      display: flex;
+    }
+  }
+}

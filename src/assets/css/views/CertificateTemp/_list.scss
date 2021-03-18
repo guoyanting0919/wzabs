@@ -1,0 +1,47 @@
+#certificateList {
+  padding: 0 1.25rem;
+  height: 100%;
+
+  .inputBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputTitle {
+    width: 90px;
+    text-align: right;
+    margin-right: 1rem;
+  }
+
+  .addOrEditDialog {
+    width: 700px;
+    border-radius: 10px;
+    margin-top: 8vh !important;
+
+    overflow: auto;
+    position: relative;
+    box-shadow: 5px 5px 10px black;
+
+    &::-webkit-scrollbar {
+      //整停sb寬度
+      width: 14px;
+      height: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      //軌道樣式
+      background-color: #fff;
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(
+        to right,
+        #898b8d 0%,
+        #898b8d 50%,
+        #fff 51%,
+        #fff 100%
+      );
+    }
+  }
+}

@@ -1,0 +1,46 @@
+#tags {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+
+  .tagsContainer {
+    display: flex;
+    // align-items: center;
+    background: #f0f0f0;
+    height: 44px;
+    // margin-bottom: 12px;
+    // margin-left: 1rem;
+  }
+
+  .el-scrollbar__wrap {
+    margin-bottom: -17px;
+    margin-right: -17px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tagsItem {
+    margin: 0 0.5rem;
+    font-size: 15px;
+    border: 1px solid $color-primary;
+    padding: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+      @include bg_color($background-color-theme1);
+    }
+
+    &:first-child {
+      margin-left: 1rem;
+    }
+
+    &.active {
+      @include bg_color($background-color-theme1);
+      color: #fff;
+    }
+  }
+}
