@@ -499,17 +499,19 @@ export default {
         FormId: [{ required: true, message: " ", trigger: "blur" }],
       },
       OrgList: [],
+      MenuSort:
+        '[{"Id":1,"title":"線上報名","Enable":true},{"Id":2,"title":"檔案下載","Enable":true},{"Id":3,"title":"活動詳情","Enable":true},{"Id":4,"title":"已報名名單","Enable":true},{"Id":5,"title":"交通指引","Enable":true},{"Id":6,"title":"本校平面圖","Enable":true},{"Id":7,"title":"校園地圖","Enable":true}]', //Menu選項及順序
     };
   },
   computed: {
     /*getFileList() {
       return JSON.parse(this.form.AttachmentFiles) ? JSON.parse(this.form.AttachmentFiles) : []
     },*/
-    getMenuSort() {
-      return JSON.parse(this.form.MenuSort)
-        ? JSON.parse(this.form.MenuSort)
-        : [];
-    },
+    // getMenuSort() {
+    //   return JSON.parse(this.form.MenuSort)
+    //     ? JSON.parse(this.form.MenuSort)
+    //     : [];
+    // },
     getCateTemp() {
       return this.CateTemp.filter((res) => res.UnitCode == this.changeCateTemp);
     },
@@ -534,8 +536,6 @@ export default {
   },
   components: { Title, Ck },
   async created() {
-    console.log(this.$route?.query?.Id);
-
     this.form.UnitCode = this.$route.query.Id
       ? ""
       : JSON.parse(localStorage.user).UnitCode;
