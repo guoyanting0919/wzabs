@@ -673,10 +673,12 @@ export default {
         typeof this.form.ActImg !== "string"
           ? JSON.stringify(this.form.ActImg)
           : "[]";
+      console.log(typeof this.form.MenuSort !== "string", this.form.MenuSort);
       this.form.MenuSort =
-        typeof this.form.MenuSort !== "string"
+        // typeof this.form.MenuSort !== "string"
+        this.form.MenuSort.length > 0
           ? JSON.stringify(this.form.MenuSort)
-          : "[]";
+          : this.MenuSort;
       this.form.IdentifyColumns =
         typeof this.form.IdentifyColumns !== "string"
           ? JSON.stringify(this.form.IdentifyColumns)
