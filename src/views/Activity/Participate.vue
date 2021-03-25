@@ -84,7 +84,7 @@
         <el-button @click="exportTable">匯出簽到表</el-button>
         <el-button @click="forSendEmail(1)" :disabled="!updatedIds.length">發送通知郵件</el-button>
         <el-button @click="inputHTMLSetNoShow = true" :disabled="!updatedIds.length">發送郵件</el-button>
-        <el-button @click="SetNo" :disabled="!updatedIds.length">生成聘函/證書字號</el-button>
+        <el-button @click="SetNo" :disabled="!updatedIds.length || !canExport">生成聘函/證書字號</el-button>
         <el-button @click="handleDeleteMembers" :disabled="!updatedIds.length">刪除</el-button>
       </div>
 
@@ -328,18 +328,26 @@ export default {
     },
 
     canExport() {
-      let num = 0;
-      for (let item of this.updatedIds) {
-        let data = this.list.filter((res) => res.RegId == item)[0];
-        if (data?.Status == 1 || data?.Status == 2) {
-          num++;
-        }
-      }
-      if (num == this.updatedIds.length) {
-        return true;
-      } else {
-        return false;
-      }
+      return (
+        this.completeList.filter((item) => {
+          return (
+            this.updatedIds.includes(item.RegId) &&
+            (item.參與狀態 == "1" || item.參與狀態 == "2")
+          );
+        }).length > 0
+      );
+      // let num = 0;
+      // for (let item of this.updatedIds) {
+      //   let data = this.list.filter((res) => res.RegId == item)[0];
+      //   if (data?.Status == 1 || data?.Status == 2) {
+      //     num++;
+      //   }
+      // }
+      // if (num == this.updatedIds.length) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
     },
   },
   methods: {
