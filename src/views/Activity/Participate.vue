@@ -84,7 +84,7 @@
         <el-button @click="exportTable">匯出簽到表</el-button>
         <el-button @click="forSendEmail(1)" :disabled="!updatedIds.length">發送通知郵件</el-button>
         <el-button @click="inputHTMLSetNoShow = true" :disabled="!updatedIds.length">發送郵件</el-button>
-        <el-button @click="SetNo" :disabled="!updatedIds.length || !canExport">生成證書字號/聘函</el-button>
+        <el-button @click="SetNo" :disabled="!updatedIds.length">生成聘函/證書字號</el-button>
         <el-button @click="handleDeleteMembers" :disabled="!updatedIds.length">刪除</el-button>
       </div>
 
@@ -691,37 +691,39 @@ export default {
       this.$store.dispatch("loadingHandler", false);
     },
     async SetNo() {
-      // if (!this.canExport) {
-      //   this.$alertM.fire({
-      //     icon: "error",
-      //     title: "請確認所選人員之參與狀態為參與或主辦",
-      //   });
-      //   return 0;
-      // }
-      let arr = [];
       this.$store.dispatch("loadingHandler", true);
-      for (let item of this.completeList) {
-        for (let item2 of this.updatedIds) {
-          if (item.RegId == item2) {
-            arr.push(item);
-          }
-        }
-      }
-      // console.log(arr);
-      for (let item of arr) {
+      let setNoItems = this.completeList.filter((item) => {
+        return (
+          this.updatedIds.includes(item.RegId) &&
+          (item.參與狀態 == "1" || item.參與狀態 == "2")
+        );
+      });
+
+      let resStatus = [];
+      for (let [idx, item] of setNoItems.entries()) {
         let obj = {
           activityRegId: item.RegId,
           memberId: item.MemId,
         };
-        let flag = await this.$api.SetNo(obj).then((res) => res.data);
+        let name = item["姓名/Name"];
+        this.$api.SetNo(obj).then((res) => {
+          if (!res.data.success) {
+            resStatus.push(`${name}${res.data.msg}無法生成證書`);
+          }
+
+          if (idx == setNoItems.length - 1) {
+            this.$alertM.fire({
+              icon: resStatus.length == 0 ? "success" : "error",
+              title: resStatus.length == 0 ? "批量生成完畢" : resStatus,
+            });
+            this.getData();
+          }
+        });
       }
-      this.$alertM.fire({
-        icon: "success",
-        title: "批量生成完畢",
-      });
-      await this.getData();
+
       this.$store.dispatch("loadingHandler", false);
     },
+
     async PostBatchJoinTime() {
       this.$store.dispatch("loadingHandler", true);
       let data = { list: this.updatedIds, jointime: this.serviceHour };
