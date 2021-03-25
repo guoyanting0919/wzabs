@@ -85,7 +85,7 @@
         <el-button @click="forSendEmail(1)" :disabled="!updatedIds.length">發送通知郵件</el-button>
         <el-button @click="inputHTMLSetNoShow = true" :disabled="!updatedIds.length">發送郵件</el-button>
         <el-button @click="SetNo" :disabled="!updatedIds.length || !canExport">生成證書字號/聘函</el-button>
-        <el-button @click="handleDeleteMembers">刪除</el-button>
+        <el-button @click="handleDeleteMembers" :disabled="!updatedIds.length">刪除</el-button>
       </div>
 
       <!-- 第二排按鈕 -->
