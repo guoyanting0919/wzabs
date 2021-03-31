@@ -227,10 +227,11 @@
       </el-table-column>
     </el-table>
     <div class="statusBox" style="display:flex">
-      <p class='statusItem'>已報名合計:{{ joinNum('0') }}人</p>
-      <p class='statusItem'>參加合計:{{ joinNum('1') }}人</p>
-      <p class='statusItem'>主辦合計:{{ joinNum('2') }}人</p>
-      <p class='statusItem'>取消合計:{{ joinNum('3') }}人</p>
+      <p class='statusItem'>已報名:{{ joinNum('0') }}人</p>
+      <p class='statusItem'>參加:{{ joinNum('1') }}人</p>
+      <p class='statusItem'>主辦:{{ joinNum('2') }}人</p>
+      <p class='statusItem'>取消:{{ joinNum('3') }}人</p>
+      <p class='statusItem'>合計:{{ completeList.length }}人</p>
 
     </div>
     <CertificatePreview :user="userData" :act="ActivityData" :img="CertificateTemp.CertBackImg" :text="CertificateTempType[0].CertContents" ref="Preview" v-if="
@@ -707,13 +708,16 @@ export default {
         );
       });
 
+      console.log(setNoItems);
+
       let resStatus = [];
       for (let [idx, item] of setNoItems.entries()) {
         let obj = {
           activityRegId: item.RegId,
           memberId: item.MemId,
         };
-        let name = item["姓名/Name"];
+        let name = item["姓名/Name"] || "主辦";
+        console.log(item);
         this.$api.SetNo(obj).then((res) => {
           if (!res.data.success) {
             resStatus.push(`${name}${res.data.msg}無法生成證書`);
